@@ -419,8 +419,7 @@ class EDA:
             display_df = top_changes[['연도', '지역', '인구', '증감']].reset_index(drop=True)
 
             # 스타일링 및 출력
-            styled_df = display_df.style.applymap(highlight_change, subset=['증감']).format({'인구': '{:,}', '증감': '{:,}'})
-
+            styled_df = display_df.style.applymap(highlight_change, subset=['증감'])
             st.write(styled_df)
 
             st.markdown("""
